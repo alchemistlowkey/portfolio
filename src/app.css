@@ -1,0 +1,239 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface-container-low: #131b2e;
+  --color-primary: #c0c1ff;
+  --color-secondary-fixed-dim: #b9c8de;
+  --color-surface-container-high: #222a3d;
+  --color-surface-tint: #c0c1ff;
+  --color-surface-variant: #2d3449;
+  --color-on-surface: #dae2fd;
+  --color-on-background: #dae2fd;
+  --color-surface: #0b1326;
+  --color-secondary-container: #39485a;
+  --color-tertiary: #4edea3;
+  --color-on-tertiary: #003824;
+  --color-surface-container-lowest: #060e20;
+  --color-surface-container: #171f33;
+  --color-primary-container: #4b4dd8;
+  --color-tertiary-container: #006e4b;
+  --color-on-secondary-container: #a7b6cc;
+  --color-secondary: #b9c8de;
+  --color-outline-variant: #464555;
+  --color-on-secondary: #233143;
+  --color-on-primary: #1000a9;
+  --color-tertiary-fixed-dim: #4edea3;
+  --color-on-tertiary-container: #67f4b7;
+  --color-surface-container-highest: #2d3449;
+  --color-tertiary-fixed: #6ffbbe;
+  --color-outline: #918fa1;
+  --color-primary-fixed: #e1e0ff;
+  --color-on-primary-container: #d9d8ff;
+  --color-secondary-fixed: #d4e4fa;
+  --color-background: #0b1326;
+  --color-on-surface-variant: #c7c4d8;
+  --color-error: #ffb4ab;
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-serif: "Lora", serif;
+
+  --color-ink: #0d0d0d;
+  --color-ink-2: #1c1c1c;
+  --color-surface: #f3f1ec;
+  --color-white: #ffffff;
+  --color-dim: #666666;
+  --color-muted: #999999;
+  --color-line: #e0ddd7;
+  --color-accent: #c85f2e;
+  --color-accent-2: #e8f0e6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b1326;
+  color: #dae2fd;
+  font-family: "Inter", sans-serif;
+  cursor: none;
+}
+
+a,
+button {
+  cursor: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060e20;
+}
+::-webkit-scrollbar-thumb {
+  background: #2d3449;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4b4dd8;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+    "FILL" 0,
+    "wght" 400,
+    "GRAD" 0,
+    "opsz" 24;
+}
+
+/* ─── Cursor ─── */
+#cursor-dot {
+  position: fixed;
+  width: 9px;
+  height: 9px;
+  background: var(--color-ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.18s,
+    height 0.18s,
+    background 0.18s;
+  mix-blend-mode: multiply;
+}
+#cursor-ring {
+  position: fixed;
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid var(--color-ink);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: multiply;
+  transition:
+    width 0.32s cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+  box-sizing: border-box;
+}
+body.cursor-hover #cursor-dot {
+  width: 18px;
+  height: 18px;
+  background: var(--color-accent);
+}
+body.cursor-hover #cursor-ring {
+  width: 56px;
+  height: 56px;
+}
+
+/* ─── Marquee ─── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee-track {
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+
+/* ─── Reveal on scroll ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.72s ease,
+    transform 0.72s ease;
+}
+.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 {
+  transition-delay: 0.1s;
+}
+.reveal-delay-2 {
+  transition-delay: 0.2s;
+}
+.reveal-delay-3 {
+  transition-delay: 0.3s;
+}
+
+/* ─── Hero load animations ─── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-up {
+  animation: fade-up 0.85s ease both;
+}
+.fade-up-2 {
+  animation: fade-up 0.85s 0.15s ease both;
+}
+.fade-up-3 {
+  animation: fade-up 0.85s 0.3s ease both;
+}
+.fade-up-4 {
+  animation: fade-up 0.85s 0.45s ease both;
+}
+
+/* ─── Ticker pulse ─── */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.4);
+  }
+}
+.pulse-dot {
+  animation: pulse-dot 1.8s ease-in-out infinite;
+}
+
+/* ─── Hover underline slide ─── */
+.underline-slide {
+  position: relative;
+}
+.underline-slide::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.28s ease;
+}
+.underline-slide:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* ─── Motion line (grid decoration) ─── */
+@keyframes line-grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+.line-grow {
+  transform-origin: left;
+  animation: line-grow 1.2s ease both;
+}
