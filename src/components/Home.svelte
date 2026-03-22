@@ -104,7 +104,10 @@
             >arrow_forward</span
           >
         </a>
-        <button
+        <a
+          href="https://github.com/alchemistlowkey"
+          target="_blank"
+          rel="noopener noreferrer"
           class="px-8 py-4 font-semibold transition-all cursor-pointer"
           style="border-radius: 0.25rem; border: 1px solid rgba(70,69,85,0.3); color: #dae2fd; background: transparent;"
           onmouseenter={(e) => (e.currentTarget.style.background = "#222a3d")}
@@ -112,7 +115,7 @@
             (e.currentTarget.style.background = "transparent")}
         >
           Documentation
-        </button>
+        </a>
       </div>
     </div>
 
