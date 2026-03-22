@@ -224,7 +224,7 @@
           onmouseenter={(e) => (e.target.style.color = "#c0c1ff")}
           onmouseleave={(e) => (e.target.style.color = "#dae2fd")}
         >
-          alchemistlowkey@gmail.com
+          lucky.samuel.egiagbo@gmail.com
         </a>
       </div>
 
