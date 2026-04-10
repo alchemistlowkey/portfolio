@@ -7,6 +7,7 @@
     "Clean/Onion Architecture",
     "Vertical Slices",
     "REST APIs, Minimal APIs",
+    "Microservices",
     "SvelteKit",
     "Next.js / React",
   ];
@@ -437,6 +438,105 @@
                   style="font-family: 'JetBrains Mono', monospace; color: #c7c4d8;"
                 >
                   YRS EXP
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Play Microservices -->
+        <div
+          class="md:col-span-12 p-1"
+          style="background: linear-gradient(135deg, rgba(192,193,255,0.15) 0%, rgba(78,222,163,0.08) 100%); border-radius: 0.5rem;"
+        >
+          <div
+            class="p-8 flex flex-col md:flex-row gap-8 items-center"
+            style="background: #171f33; border-radius: 0.375rem; border: 1px solid rgba(192,193,255,0.1);"
+          >
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-4">
+                <span
+                  class="px-2 py-0.5 text-xs uppercase tracking-wider"
+                  style="border-radius: 0.125rem; background: rgba(78,222,163,0.15); color: #4edea3; font-family: 'JetBrains Mono', monospace; border: 1px solid rgba(78,222,163,0.3);"
+                  >Just Shipped</span
+                >
+                <span
+                  class="px-2 py-0.5 text-xs uppercase tracking-wider"
+                  style="border-radius: 0.125rem; background: rgba(192,193,255,0.1); color: #c0c1ff; font-family: 'JetBrains Mono', monospace;"
+                  >Microservices</span
+                >
+              </div>
+              <h4
+                class="text-2xl font-bold mb-3"
+                style="font-family: 'Space Grotesk', sans-serif; color: #dae2fd;"
+              >
+                Play Microservices
+              </h4>
+              <p class="text-sm leading-relaxed mb-4" style="color: #c7c4d8;">
+                A .NET 5 microservices architecture demonstrating <span
+                  class="font-extrabold text-white">event-driven communication</span
+                >
+                with MongoDB and RabbitMQ via MassTransit. Features Catalog
+                Service, Inventory Service, and Next.js 14 frontend.
+              </p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                {#each [".NET 5", "MongoDB", "RabbitMQ", "MassTransit", "Next.js 14"] as tag}
+                  <span
+                    class="px-2 py-1 uppercase tracking-tighter text-xs"
+                    style="font-family: 'JetBrains Mono', monospace; background: #39485a; color: #a7b6cc; border-radius: 0.125rem;"
+                    >{tag}</span
+                  >
+                {/each}
+              </div>
+              <a
+                href="https://github.com/alchemistlowkey/play.microservices"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-sm group/link"
+                style="color: #4edea3; font-family: 'JetBrains Mono', monospace;"
+              >
+                VIEW_SOURCE <span
+                  class="material-symbols-outlined ml-2 text-sm transition-transform group-hover/link:translate-x-1"
+                  >open_in_new</span
+                >
+              </a>
+            </div>
+            <div class="flex-1 w-full">
+              <div
+                class="p-4 text-xs"
+                style="font-family: 'JetBrains Mono', monospace; background: #060e20; border-radius: 0.375rem; border: 1px solid rgba(70,69,85,0.15);"
+              >
+                <div
+                  class="flex items-center gap-2 mb-3 pb-2"
+                  style="border-bottom: 1px solid rgba(70,69,85,0.1);"
+                >
+                  <span
+                    class="text-xs"
+                    style="color: rgba(167,182,204,0.5);">architecture.yaml</span
+                  >
+                </div>
+                <div class="space-y-2">
+                  <div class="flex gap-4">
+                    <span style="color: #c0c1ff;">┌─────────────┐</span>
+                    <span style="color: #c0c1ff;">┌─────────────┐</span>
+                  </div>
+                  <div class="flex gap-4">
+                    <span style="color: #c0c1ff;">│  Frontend   │────▶│  Catalog   │</span>
+                  </div>
+                  <div class="flex gap-4">
+                    <span style="color: #c0c1ff;">│  (Next.js)  │</span>
+                    <span style="color: #c0c1ff;">│  Service   │</span>
+                  </div>
+                  <div class="flex gap-4">
+                    <span style="color: #c0c1ff;">└─────────────┘</span>
+                    <span style="color: #c0c1ff;">└─────────────┘</span>
+                  </div>
+                  <div style="color: #4edea3;">         │</div>
+                  <div style="color: #4edea3;">         ▼ (RabbitMQ)</div>
+                  <div style="color: #4edea3;">  ┌─────────────┐</div>
+                  <div style="color: #4edea3;">  │  Inventory │</div>
+                  <div style="color: #4edea3;">  │  Service   │</div>
+                  <div style="color: #4edea3;">  └─────────────┘</div>
                 </div>
               </div>
             </div>

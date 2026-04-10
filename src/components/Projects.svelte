@@ -368,6 +368,90 @@
       </div>
     </div>
 
+    <!-- Play Microservices -->
+    <div
+      class="md:col-span-6 p-8 flex flex-col justify-between"
+      style="background: #171f33; border-radius: 0.5rem; border: 1px solid rgba(192,193,255,0.15);"
+    >
+      <div>
+        <div class="flex items-center justify-between mb-6">
+          <div
+            class="w-12 h-12 flex items-center justify-center"
+            style="background: rgba(192,193,255,0.1); border-radius: 0.25rem;"
+          >
+            <span class="material-symbols-outlined text-2xl" style="color: #c0c1ff;"
+              >dns</span
+            >
+          </div>
+          <div class="flex gap-3">
+            <a
+              href="https://github.com/alchemistlowkey/play.microservices"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="p-2 transition-all"
+              style="background: #222a3d; border-radius: 0.25rem;"
+              onmouseenter={(e) => {
+                e.currentTarget.style.background = "#c0c1ff";
+                e.currentTarget.querySelector(
+                  ".material-symbols-outlined",
+                ).style.color = "#1000a9";
+              }}
+              onmouseleave={(e) => {
+                e.currentTarget.style.background = "#222a3d";
+                e.currentTarget.querySelector(
+                  ".material-symbols-outlined",
+                ).style.color = "#dae2fd";
+              }}
+            >
+              <span
+                class="material-symbols-outlined text-sm"
+                style="color: #dae2fd;">code</span
+              >
+            </a>
+          </div>
+        </div>
+        <h3
+          class="text-2xl font-bold mb-2"
+          style="font-family: 'Space Grotesk', sans-serif; color: #dae2fd;"
+        >
+          Play Microservices
+        </h3>
+        <p class="text-sm mb-6 leading-relaxed" style="color: #c7c4d8;">
+          A .NET 5 microservices architecture demonstrating event-driven communication
+          with <span class="font-extrabold text-white">MongoDB</span> and
+          <span class="font-extrabold text-white">RabbitMQ</span> via MassTransit.
+          Features Catalog and Inventory services with Next.js frontend.
+        </p>
+        <ul class="space-y-2 mb-6">
+          {#each ["Event-driven architecture", "MongoDB repositories", "RabbitMQ message broker", "Docker Compose infra"] as item}
+            <li class="flex items-center gap-3 text-xs" style="color: #c7c4d8;">
+              <span
+                class="material-symbols-outlined text-sm"
+                style="color: #4edea3;">check_circle</span
+              >
+              {item}
+            </li>
+          {/each}
+        </ul>
+      </div>
+      <div class="flex items-center justify-between">
+        <div class="flex flex-wrap gap-2">
+          {#each [".NET 5", "MongoDB", "RabbitMQ", "Next.js 14"] as tag}
+            <span
+              class="px-2 py-1 uppercase tracking-tighter text-xs"
+              style="font-family: 'JetBrains Mono', monospace; background: #39485a; color: #a7b6cc; border-radius: 0.125rem;"
+              >{tag}</span
+          >
+          {/each}
+        </div>
+        <span
+          class="text-xs uppercase tracking-widest"
+          style="font-family: 'JetBrains Mono', monospace; color: #4edea3;"
+          >Just Shipped</span
+        >
+      </div>
+    </div>
+
     <!-- Terminal: git log -->
     <div
       class="md:col-span-6 p-6 text-xs"
@@ -399,6 +483,9 @@
         <p style="color: #b9c8de;"># Backend Engineer</p>
         <p style="color: #c7c4d8;">
           <span style="color: #c0c1ff;">$</span> git log --oneline --author="Lucky"
+        </p>
+        <p style="color: rgba(167,182,204,0.6);">
+          feat: play microservices — event-driven .NET services
         </p>
         <p style="color: rgba(167,182,204,0.6);">
           feat: product catalogue & cart — ecommerce API
