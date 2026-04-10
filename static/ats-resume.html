@@ -1,256 +1,380 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Lucky Samuel - Backend Engineer - ATS Resume</title>
-    <meta name="description" content="Backend Engineer with 3+ years in .NET/C#, Clean Architecture, Microservices, CQRS, REST APIs">
+    <meta
+      name="description"
+      content="Backend Engineer with 3+ years in .NET/C#, Clean Architecture, Microservices, CQRS, REST APIs"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        @page {
-            size: letter;
-            margin: 0.5in;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @page {
+        size: letter;
+        margin: 0.5in;
+      }
+      body {
+        font-family: "Calibri", "Arial", sans-serif;
+        font-size: 11pt;
+        line-height: 1.4;
+        color: #1a1a1a;
+        background: white;
+        padding: 0.5in;
+        max-width: 8.5in;
+        margin: 0 auto;
+      }
+      .header {
+        border-bottom: 2px solid #1a1a1a;
+        padding-bottom: 12px;
+        margin-bottom: 16px;
+      }
+      .name {
+        font-size: 24pt;
+        font-weight: bold;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+      .title {
+        font-size: 14pt;
+        color: #333;
+        margin-bottom: 8px;
+      }
+      .contact {
+        font-size: 10pt;
+        color: #444;
+      }
+      .contact span {
+        margin-right: 20px;
+      }
+      .section {
+        margin-bottom: 16px;
+      }
+      .section-title {
+        font-size: 12pt;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 1px solid #999;
+        padding-bottom: 4px;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+      }
+      .summary {
+        font-size: 10pt;
+        text-align: justify;
+      }
+      .experience-item {
+        margin-bottom: 14px;
+      }
+      .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 4px;
+      }
+      .job-title {
+        font-weight: bold;
+        font-size: 11pt;
+      }
+      .job-period {
+        font-size: 10pt;
+        color: #555;
+      }
+      .company {
+        font-size: 10pt;
+        color: #444;
+        font-style: italic;
+        margin-bottom: 4px;
+      }
+      .bullets {
+        margin-left: 16px;
+        font-size: 10pt;
+      }
+      .bullets li {
+        margin-bottom: 2px;
+        text-align: justify;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px 20px;
+      }
+      .skill-category {
+        font-weight: bold;
+        font-size: 10pt;
+      }
+      .skill-list {
+        font-size: 10pt;
+      }
+      .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6px;
+      }
+      .tool-item {
+        font-size: 10pt;
+        padding: 2px 6px;
+        background: #f5f5f5;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+      @media print {
         body {
-            font-family: 'Calibri', 'Arial', sans-serif;
-            font-size: 11pt;
-            line-height: 1.4;
-            color: #1a1a1a;
-            background: white;
-            padding: 0.5in;
-            max-width: 8.5in;
-            margin: 0 auto;
-        }
-        .header {
-            border-bottom: 2px solid #1a1a1a;
-            padding-bottom: 12px;
-            margin-bottom: 16px;
-        }
-        .name {
-            font-size: 24pt;
-            font-weight: bold;
-            color: #1a1a1a;
-            margin-bottom: 4px;
-        }
-        .title {
-            font-size: 14pt;
-            color: #333;
-            margin-bottom: 8px;
-        }
-        .contact {
-            font-size: 10pt;
-            color: #444;
-        }
-        .contact span {
-            margin-right: 20px;
+          padding: 0;
         }
         .section {
-            margin-bottom: 16px;
+          page-break-inside: avoid;
         }
-        .section-title {
-            font-size: 12pt;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-bottom: 1px solid #999;
-            padding-bottom: 4px;
-            margin-bottom: 10px;
-            color: #1a1a1a;
-        }
-        .summary {
-            font-size: 10pt;
-            text-align: justify;
-        }
-        .experience-item {
-            margin-bottom: 14px;
-        }
-        .job-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
-        .job-title {
-            font-weight: bold;
-            font-size: 11pt;
-        }
-        .job-period {
-            font-size: 10pt;
-            color: #555;
-        }
-        .company {
-            font-size: 10pt;
-            color: #444;
-            font-style: italic;
-            margin-bottom: 4px;
-        }
-        .bullets {
-            margin-left: 16px;
-            font-size: 10pt;
-        }
-        .bullets li {
-            margin-bottom: 2px;
-            text-align: justify;
-        }
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px 20px;
-        }
-        .skill-category {
-            font-weight: bold;
-            font-size: 10pt;
-        }
-        .skill-list {
-            font-size: 10pt;
-        }
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
-        }
-        .tool-item {
-            font-size: 10pt;
-            padding: 2px 6px;
-            background: #f5f5f5;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-        @media print {
-            body { padding: 0; }
-            .section { page-break-inside: avoid; }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="header">
-        <div class="name">LUCKY SAMUEL</div>
-        <div class="title">Backend Engineer | .NET / C# Developer</div>
-        <div class="contact">
-            <span>lucky.samuel.egiagbo@gmail.com</span>
-            <span>Lagos, Nigeria</span>
-            <span>linkedin.com/in/lucky-samuel</span>
-            <span>github.com/alchemistlowkey</span>
-        </div>
+      <div class="name">LUCKY SAMUEL</div>
+      <div class="title">Backend Engineer | .NET / C# Developer</div>
+      <div class="contact">
+        <span>lucky.samuel.egiagbo@gmail.com</span>
+        <span>Lagos, Nigeria</span>
+        <span>linkedin.com/in/lucky-samuel</span>
+        <span>github.com/alchemistlowkey</span>
+      </div>
     </div>
 
     <div class="section">
-        <div class="section-title">PROFESSIONAL SUMMARY</div>
-        <div class="summary">
-            Backend Engineer with 3+ years of experience building production-ready APIs and distributed systems in C# / ASP.NET Core. Expertise in Clean Architecture, Vertical Slice Architecture, Microservices with event-driven patterns (RabbitMQ, MassTransit), CQRS with MediatR, and RESTful API design. Strong in Entity Framework Core, PostgreSQL, MongoDB, and unit testing with xUnit + Moq. Frontend-capable in SvelteKit when needed. Passionate about clean code, testability, and building scalable, maintainable systems.
-        </div>
+      <div class="section-title">PROFESSIONAL SUMMARY</div>
+      <div class="summary">
+        Backend Engineer with 3+ years of experience building production-ready
+        APIs and distributed systems in C# / ASP.NET Core. Expertise in Clean
+        Architecture, Vertical Slice Architecture, Microservices with
+        event-driven patterns (RabbitMQ, MassTransit), CQRS with MediatR, and
+        RESTful API design. Strong in Entity Framework Core, PostgreSQL,
+        MongoDB, and unit testing with xUnit + Moq. Frontend-capable in
+        SvelteKit, Next.JS when needed. Passionate about clean code,
+        testability, and building scalable, maintainable systems.
+      </div>
     </div>
 
     <div class="section">
-        <div class="section-title">TECHNICAL SKILLS</div>
-        <div class="skills-grid">
-            <div><span class="skill-category">Backend:</span> <span class="skill-list">C#, ASP.NET Core, .NET 5-10, Clean Architecture, Vertical Slices, Minimal APIs</span></div>
-            <div><span class="skill-category">Microservices:</span> <span class="skill-list">RabbitMQ, MassTransit, Event-Driven Architecture, Message Queues</span></div>
-            <div><span class="skill-category">Patterns:</span> <span class="skill-list">CQRS with MediatR, Repository Pattern, FluentValidation, Dependency Injection</span></div>
-            <div><span class="skill-category">Frontend:</span> <span class="skill-list">SvelteKit, React, Next.js, TypeScript, Tailwind CSS</span></div>
-            <div><span class="skill-category">Databases:</span> <span class="skill-list">PostgreSQL, SQL Server, MongoDB, Entity Framework Core, Dapper</span></div>
-            <div><span class="skill-category">Testing:</span> <span class="skill-list">xUnit, Moq, FluentAssertions, Integration Tests</span></div>
-            <div><span class="skill-category">Tools:</span> <span class="skill-list">Git, Docker, Swagger/OpenAPI, Serilog, JWT, Keycloak</span></div>
-            <div><span class="skill-category">Cloud:</span> <span class="skill-list">Vercel, AWS (basic), Azure (basic)</span></div>
+      <div class="section-title">TECHNICAL SKILLS</div>
+      <div class="skills-grid">
+        <div>
+          <span class="skill-category">Backend:</span>
+          <span class="skill-list"
+            >C#, ASP.NET Core, .NET 5-10, Clean Architecture, Vertical Slices,
+            Minimal APIs</span
+          >
         </div>
+        <div>
+          <span class="skill-category">Microservices:</span>
+          <span class="skill-list"
+            >RabbitMQ, MassTransit, Event-Driven Architecture, Message
+            Queues</span
+          >
+        </div>
+        <div>
+          <span class="skill-category">Patterns:</span>
+          <span class="skill-list"
+            >CQRS with MediatR, Repository Pattern, FluentValidation, Dependency
+            Injection</span
+          >
+        </div>
+        <div>
+          <span class="skill-category">Frontend:</span>
+          <span class="skill-list"
+            >SvelteKit, React, Next.js, TypeScript, Tailwind CSS</span
+          >
+        </div>
+        <div>
+          <span class="skill-category">Databases:</span>
+          <span class="skill-list"
+            >PostgreSQL, SQL Server, MongoDB, Entity Framework Core,
+            Dapper</span
+          >
+        </div>
+        <div>
+          <span class="skill-category">Testing:</span>
+          <span class="skill-list"
+            >xUnit, Moq, FluentAssertions, Integration Tests</span
+          >
+        </div>
+        <div>
+          <span class="skill-category">Tools:</span>
+          <span class="skill-list"
+            >Git, Docker, Swagger/OpenAPI, Serilog, JWT, Keycloak</span
+          >
+        </div>
+        <div>
+          <span class="skill-category">Cloud:</span>
+          <span class="skill-list">Vercel, AWS (basic), Azure (basic)</span>
+        </div>
+      </div>
     </div>
 
     <div class="section">
-        <div class="section-title">PROJECTS</div>
-        
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="job-title">Play Microservices</span>
-                <span class="job-period">2026</span>
-            </div>
-            <div class="company">Microservices Architecture | .NET 5 / RabbitMQ / MongoDB / Next.js 14</div>
-            <ul class="bullets">
-                <li>Architected event-driven microservices architecture using .NET 5 with RabbitMQ and MassTransit for asynchronous service communication</li>
-                <li>Built Catalog Service (REST API for CRUD operations) and Inventory Service (event consumer, manages stock levels)</li>
-                <li>Created shared Play.Common library with reusable MongoDB repositories and MassTransit extensions</li>
-                <li>Containerized services with Docker Compose for MongoDB and RabbitMQ infrastructure</li>
-                <li>Tech: C#, ASP.NET Core, .NET 5, MongoDB, RabbitMQ, MassTransit, Next.js 14, Docker</li>
-            </ul>
-        </div>
+      <div class="section-title">PROJECTS</div>
 
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="job-title">E-Commerce Platform</span>
-                <span class="job-period">2025 - Present</span>
-            </div>
-            <div class="company">Fullstack | ASP.NET Core 10 (C#) + SvelteKit</div>
-            <ul class="bullets">
-                <li>Built production-ready e-commerce backend using ASP.NET Core 10 with Clean Architecture (Repository & Service patterns)</li>
-                <li>Implemented JWT authentication and PostgreSQL with EF Core migrations for data persistence</li>
-                <li>Integrated Paystack and Flutterwave payment gateways with proper error handling and webhook handling</li>
-                <li>Added Serilog structured logging and Scalar OpenAPI documentation for API observability</li>
-                <li>Developed SvelteKit storefront covering product catalogue, cart management, and order processing with real-time cart sync</li>
-            </ul>
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Play Microservices</span>
+          <span class="job-period">2026</span>
         </div>
+        <div class="company">
+          Microservices Architecture | .NET 5 / RabbitMQ / MongoDB / Next.js 14
+        </div>
+        <ul class="bullets">
+          <li>
+            Architected event-driven microservices architecture using .NET 5
+            with RabbitMQ and MassTransit for asynchronous service communication
+          </li>
+          <li>
+            Built Catalog Service (REST API for CRUD operations) and Inventory
+            Service (event consumer, manages stock levels)
+          </li>
+          <li>
+            Created shared Play.Common library with reusable MongoDB
+            repositories and MassTransit extensions
+          </li>
+          <li>
+            Containerized services with Docker Compose for MongoDB and RabbitMQ
+            infrastructure
+          </li>
+          <li>
+            Tech: C#, ASP.NET Core, .NET 5, MongoDB, RabbitMQ, MassTransit,
+            Next.js 15+, Docker
+          </li>
+        </ul>
+      </div>
 
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="job-title">Expense Tracker API</span>
-                <span class="job-period">2024</span>
-            </div>
-            <div class="company">Fullstack | ASP.NET Core 10 (C#) + SvelteKit</div>
-            <ul class="bullets">
-                <li>Developed Clean Architecture Web API for personal expense tracking with layered Repository/Service design</li>
-                <li>Implemented JWT authentication with token refresh and EF Core PostgreSQL for data storage</li>
-                <li>Created Swagger/OpenAPI documentation with XML comments and request/response examples</li>
-                <li>Built SvelteKit frontend for real-time expense categorisation, filtering, and spending visualization with charts</li>
-            </ul>
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">E-Commerce Platform</span>
+          <span class="job-period">2025 - Present</span>
         </div>
+        <div class="company">Fullstack | ASP.NET Core 10 (C#) + SvelteKit</div>
+        <ul class="bullets">
+          <li>
+            Built production-ready e-commerce backend using ASP.NET Core 10 with
+            Clean Architecture (Repository & Service patterns)
+          </li>
+          <li>
+            Implemented JWT authentication and PostgreSQL with EF Core
+            migrations for data persistence
+          </li>
+          <li>
+            Integrated Paystack and Flutterwave payment gateways with proper
+            error handling and webhook handling
+          </li>
+          <li>
+            Added Serilog structured logging and Scalar OpenAPI documentation
+            for API observability
+          </li>
+          <li>
+            Developed SvelteKit storefront covering product catalogue, cart
+            management, and order processing with real-time cart sync
+          </li>
+        </ul>
+      </div>
 
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="job-title">BookStore API</span>
-                <span class="job-period">2024</span>
-            </div>
-            <div class="company">REST API | ASP.NET Core / C#</div>
-            <ul class="bullets">
-                <li>Developed modern, scalable API with .NET 10 using Vertical Slice Architecture with MediatR for CQRS patterns</li>
-                <li>Implemented JWT authentication with Keycloak identity provider and role-based authorization</li>
-                <li>Created FluentValidation validators for each feature slice with expressive, testable rules</li>
-                <li>Added AutoMapper for DTO mapping and comprehensive xUnit + Moq test suite with 90%+ coverage</li>
-                <li>Every feature is a self-contained slice: handler, validator, request/response DTOs co-located per folder</li>
-            </ul>
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Expense Tracker API</span>
+          <span class="job-period">2024</span>
         </div>
+        <div class="company">Fullstack | ASP.NET Core 10 (C#) + SvelteKit</div>
+        <ul class="bullets">
+          <li>
+            Developed Clean Architecture Web API for personal expense tracking
+            with layered Repository/Service design
+          </li>
+          <li>
+            Implemented JWT authentication with token refresh and EF Core
+            PostgreSQL for data storage
+          </li>
+          <li>
+            Created Swagger/OpenAPI documentation with XML comments and
+            request/response examples
+          </li>
+          <li>
+            Built SvelteKit frontend for real-time expense categorisation,
+            filtering, and spending visualization with charts
+          </li>
+        </ul>
+      </div>
 
-        <div class="experience-item">
-            <div class="job-header">
-                <span class="job-title">Invoicely</span>
-                <span class="job-period">2024 - Present</span>
-            </div>
-            <div class="company">SvelteKit | Node.js | Tailwind v4</div>
-            <ul class="bullets">
-                <li>Built full-featured invoicing SaaS with client management and real-time PDF generation</li>
-                <li>Implemented shared Svelte writable store for cross-component sidebar state synchronization</li>
-                <li>Designed mobile-first responsive dashboard with card-based alternatives to data tables</li>
-            </ul>
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">BookStore API</span>
+          <span class="job-period">2024</span>
         </div>
+        <div class="company">REST API | ASP.NET Core / C#</div>
+        <ul class="bullets">
+          <li>
+            Developed modern, scalable API with .NET 10 using Vertical Slice
+            Architecture with MediatR for CQRS patterns
+          </li>
+          <li>
+            Implemented JWT authentication with Keycloak identity provider and
+            role-based authorization
+          </li>
+          <li>
+            Created FluentValidation validators for each feature slice with
+            expressive, testable rules
+          </li>
+          <li>
+            Added AutoMapper for DTO mapping and comprehensive xUnit + Moq test
+            suite with 90%+ coverage
+          </li>
+          <li>
+            Every feature is a self-contained slice: handler, validator,
+            request/response DTOs co-located per folder
+          </li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <div class="job-header">
+          <span class="job-title">Invoicely</span>
+          <span class="job-period">2024 - Present</span>
+        </div>
+        <div class="company">SvelteKit | Node.js | Tailwind v4</div>
+        <ul class="bullets">
+          <li>
+            Built full-featured invoicing SaaS with client management and
+            real-time PDF generation
+          </li>
+          <li>
+            Implemented shared Svelte writable store for cross-component sidebar
+            state synchronization
+          </li>
+          <li>
+            Designed mobile-first responsive dashboard with card-based
+            alternatives to data tables
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="section">
-        <div class="section-title">TOOLS & CERTIFICATIONS</div>
-        <div class="tools-grid">
-            <div class="tool-item">MediatR</div>
-            <div class="tool-item">FluentValidation</div>
-            <div class="tool-item">AutoMapper</div>
-            <div class="tool-item">xUnit + Moq</div>
-            <div class="tool-item">Swagger/OpenAPI</div>
-            <div class="tool-item">JWT / Keycloak</div>
-            <div class="tool-item">Serilog</div>
-            <div class="tool-item">Docker</div>
-            <div class="tool-item">RabbitMQ</div>
-            <div class="tool-item">MassTransit</div>
-            <div class="tool-item">MongoDB</div>
-            <div class="tool-item">Git</div>
-        </div>
+      <div class="section-title">TOOLS</div>
+      <div class="tools-grid">
+        <div class="tool-item">CQRS / MediatR</div>
+        <div class="tool-item">FluentValidation</div>
+        <div class="tool-item">Swagger/OpenAPI</div>
+        <div class="tool-item">JWT / Keycloak</div>
+        <div class="tool-item">Serilog</div>
+        <div class="tool-item">Docker</div>
+        <div class="tool-item">RabbitMQ</div>
+        <div class="tool-item">MassTransit</div>
+        <div class="tool-item">MongoDB</div>
+        <div class="tool-item">MSSQL</div>
+        <div class="tool-item">PostgreSQL</div>
+        <div class="tool-item">Git</div>
+      </div>
     </div>
-</body>
+  </body>
 </html>

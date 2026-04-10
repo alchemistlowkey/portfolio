@@ -20,23 +20,32 @@
       </p>
     </div>
 
-    <!-- Download PDF button — links directly to the static PDF -->
-    <a
-      href="/Lucky_Samuel_Resume.pdf"
-      download="Lucky_Samuel_Resume.pdf"
-      class="flex items-center gap-2 px-6 py-3 transition-all font-medium group"
-      style="background: #222a3d; border: 1px solid rgba(70,69,85,0.2); color: #dae2fd; border-radius: 0.25rem; font-family: 'Space Grotesk', sans-serif; text-decoration: none;"
-      onmouseenter={(e) =>
-        (e.currentTarget.style.borderColor = "rgba(192,193,255,0.5)")}
-      onmouseleave={(e) =>
-        (e.currentTarget.style.borderColor = "rgba(70,69,85,0.2)")}
-    >
-      <span
-        class="material-symbols-outlined transition-transform group-hover:scale-110"
-        style="color: #c0c1ff;">download</span
+    <!-- View Resume button -->
+    <div class="flex gap-4">
+      <a
+        href="/view"
+        class="flex items-center gap-2 px-6 py-3 transition-all font-medium group"
+        style="background: #222a3d; border: 1px solid rgba(70,69,85,0.2); color: #dae2fd; border-radius: 0.25rem; font-family: 'Space Grotesk', sans-serif; text-decoration: none;"
+        >View</a
       >
-      Download PDF
-    </a>
+      <!-- Download PDF button — links directly to the static PDF -->
+      <a
+        href="/Lucky_Samuel_Resume.pdf"
+        download="Lucky_Samuel_Resume.pdf"
+        class="flex items-center gap-2 px-6 py-3 transition-all font-medium group"
+        style="background: #222a3d; border: 1px solid rgba(70,69,85,0.2); color: #dae2fd; border-radius: 0.25rem; font-family: 'Space Grotesk', sans-serif; text-decoration: none;"
+        onmouseenter={(e) =>
+          (e.currentTarget.style.borderColor = "rgba(192,193,255,0.5)")}
+        onmouseleave={(e) =>
+          (e.currentTarget.style.borderColor = "rgba(70,69,85,0.2)")}
+      >
+        <span
+          class="material-symbols-outlined transition-transform group-hover:scale-110"
+          style="color: #c0c1ff;">download</span
+        >
+        Download PDF
+      </a>
+    </div>
   </div>
 
   <!-- Resume Canvas -->
@@ -105,7 +114,7 @@
             <span style="color: #dae2fd; font-weight: 500;"
               >.NET / C# (ASP.NET Core)</span
             >. Specialises in Clean Architecture, Vertical Slice Architecture,
-            Microservices with event-driven patterns (RabbitMQ/MassTransit), 
+            Microservices with event-driven patterns (RabbitMQ/MassTransit),
             CQRS with MediatR, FluentValidation, and RESTful API design.
             Frontend-capable in SvelteKit when the project calls for it.
           </p>
