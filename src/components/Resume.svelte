@@ -105,6 +105,7 @@
             <span style="color: #dae2fd; font-weight: 500;"
               >.NET / C# (ASP.NET Core)</span
             >. Specialises in Clean Architecture, Vertical Slice Architecture,
+            Microservices with event-driven patterns (RabbitMQ/MassTransit), 
             CQRS with MediatR, FluentValidation, and RESTful API design.
             Frontend-capable in SvelteKit when the project calls for it.
           </p>
@@ -122,7 +123,7 @@
           </h3>
         </div>
         <div class="md:col-span-3 space-y-12">
-          {#each [{ title: "E-Commerce Platform", company: "Fullstack · ASP.NET Core (C#) + SvelteKit", period: "2025 — PRESENT", link: "https://csharp-ecommerce-frontend.vercel.app", bullets: ["Production-ready e-commerce backend built with ASP.NET Core 10 using Clean Architecture with Repository & Service patterns.", "Features JWT authentication, PostgreSQL with EF Core migrations, Paystack/Flutterwave payment integration, Serilog logging, and Scalar API documentation.", "SvelteKit storefront covering product catalogue, cart management, and order processing."] }, { title: "Expense Tracker", company: "Fullstack · ASP.NET Core (C#) + SvelteKit", period: "2024", link: "https://expense-tracker-mu-eight-84.vercel.app", bullets: ["Clean Architecture ASP.NET Core 10 Web API for personal expense tracking.", "Features JWT auth, EF Core with PostgreSQL, Swagger docs, and layered Repository/Service design.", "SvelteKit frontend for real-time categorisation, filtering, and spending visualisation."] }, { title: "BookStore API", company: "REST API · ASP.NET Core / C#", period: "2024", link: "https://github.com/alchemistlowkey/BookStore.API", bullets: ["Modern, scalable API built with .NET 10 and ASP.NET Core using Vertical Slice Architecture with MediatR for CQRS patterns.", "Features JWT authentication with Keycloak, EF Core, FluentValidation, AutoMapper, Swagger/OpenAPI docs, and comprehensive xUnit + Moq testing.", "Every feature is a self-contained slice — handler, validator, and DTO co-located per feature folder."] }, { title: "Invoicely", company: "SvelteKit · Node.js", period: "2024 — PRESENT", link: "https://invoicelyapp-gen.vercel.app/dashboard", bullets: ["Full-featured invoicing SaaS with client management, real-time PDF previews, and a responsive dashboard built with Tailwind v4.", "Implemented a shared Svelte writable store (sidebarStore.js) to sync sidebar state across layout and main content.", "Mobile-first design: card-based alternatives to data tables and touch-friendly interactions."] }] as job}
+          {#each [{ title: "Play Microservices", company: "Microservices · .NET 5 / RabbitMQ / MongoDB / Next.js", period: "2026", link: "https://github.com/alchemistlowkey/play.microservices", bullets: ["Event-driven microservices architecture with .NET 5, demonstrating async communication via MassTransit and RabbitMQ.", "Services: Catalog Service (REST API for catalog management), Inventory Service (consumes events, manages inventory).", "Next.js 14 frontend, Docker Compose for MongoDB and RabbitMQ infrastructure.", "Shared Play.Common library with MongoDB repositories and MassTransit extensions."] }, { title: "E-Commerce Platform", company: "Fullstack · ASP.NET Core (C#) + SvelteKit", period: "2025 — PRESENT", link: "https://csharp-ecommerce-frontend.vercel.app", bullets: ["Production-ready e-commerce backend built with ASP.NET Core 10 using Clean Architecture with Repository & Service patterns.", "Features JWT authentication, PostgreSQL with EF Core migrations, Paystack/Flutterwave payment integration, Serilog logging, and Scalar API documentation.", "SvelteKit storefront covering product catalogue, cart management, and order processing."] }, { title: "Expense Tracker", company: "Fullstack · ASP.NET Core (C#) + SvelteKit", period: "2024", link: "https://expense-tracker-mu-eight-84.vercel.app", bullets: ["Clean Architecture ASP.NET Core 10 Web API for personal expense tracking.", "Features JWT auth, EF Core with PostgreSQL, Swagger docs, and layered Repository/Service design.", "SvelteKit frontend for real-time categorisation, filtering, and spending visualisation."] }, { title: "BookStore API", company: "REST API · ASP.NET Core / C#", period: "2024", link: "https://github.com/alchemistlowkey/BookStore.API", bullets: ["Modern, scalable API built with .NET 10 and ASP.NET Core using Vertical Slice Architecture with MediatR for CQRS patterns.", "Features JWT authentication with Keycloak, EF Core, FluentValidation, AutoMapper, Swagger/OpenAPI docs, and comprehensive xUnit + Moq testing.", "Every feature is a self-contained slice — handler, validator, and DTO co-located per feature folder."] }] as job}
             <div class="space-y-4">
               <div
                 class="flex flex-col sm:flex-row sm:items-start justify-between gap-2"
@@ -183,7 +184,7 @@
         <div class="md:col-span-3">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div class="space-y-3">
-              {#each [["Backend", "ASP.NET Core, C#, Clean Arch, Vertical Slices"], ["Patterns", "CQRS / MediatR, Repository, FluentValidation"], ["Frontend", "SvelteKit, React, Next.js, Tailwind CSS v4"], ["Database", "PostgreSQL, SQL Server, EF Core, MongoDB"], ["Language", "C#, JavaScript"]] as [label, value]}
+              {#each [["Backend", "ASP.NET Core, C#, Clean Arch, Vertical Slices"], ["Microservices", "RabbitMQ, MassTransit, Event-Driven, MongoDB"], ["Patterns", "CQRS / MediatR, Repository, FluentValidation"], ["Frontend", "SvelteKit, React, Next.js, Tailwind CSS v4"], ["Database", "PostgreSQL, SQL Server, EF Core, MongoDB"], ["Language", "C#, JavaScript"]] as [label, value]}
                 <div>
                   <p
                     class="text-xs uppercase tracking-widest mb-0.5"
@@ -196,7 +197,7 @@
               {/each}
             </div>
             <div class="space-y-3">
-              {#each ["MediatR", "FluentValidation", "AutoMapper", "xUnit + Moq", "Swagger / OpenAPI", "JWT / Keycloak", "Serilog", "Docker"] as tool}
+              {#each ["MediatR", "FluentValidation", "AutoMapper", "xUnit + Moq", "Swagger / OpenAPI", "JWT / Keycloak", "Serilog", "Docker", "RabbitMQ", "MassTransit"] as tool}
                 <div
                   class="flex items-center gap-3 p-3"
                   style="background: #131b2e; border-radius: 0.25rem; border: 1px solid rgba(70,69,85,0.1);"

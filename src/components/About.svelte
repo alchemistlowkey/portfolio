@@ -6,6 +6,7 @@
     "Clean/Onion Architecture",
     "Vertical Slices",
     "REST APIs, Minimal APIs",
+    "Microservices",
     "SvelteKit",
     "Next.js / React",
   ];
@@ -143,7 +144,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {#each [{ icon: "api", title: "Backend (.NET)", tags: ["ASP.NET Core", "C#", "EF Core", "AutoMapper", "REST APIs"] }, { icon: "terminal", title: "Frontend", tags: ["SvelteKit", "React", "Next.js", "Tailwind CSS v4"] }, { icon: "database", title: "Databases", tags: ["PostgreSQL", "SQL Server", "MongoDB", "EF Core"] }, { icon: "build", title: "Tools", tags: ["Git", "xUnit", "Swagger", "Vercel", "Docker"] }] as cat}
+      {#each [{ icon: "api", title: "Backend (.NET)", tags: ["ASP.NET Core", "C#", "Clean Arch", "REST APIs", "Minimal APIs"] }, { icon: "dns", title: "Microservices", tags: ["RabbitMQ", "MassTransit", "MongoDB", "Event-Driven"] }, { icon: "terminal", title: "Frontend", tags: ["SvelteKit", "React", "Next.js", "Tailwind CSS v4"] }, { icon: "database", title: "Databases", tags: ["PostgreSQL", "SQL Server", "MongoDB", "EF Core"] }] as cat}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <div
           class="p-8 space-y-6 transition-colors"
@@ -198,7 +199,7 @@
           </h2>
         </div>
         <div class="space-y-8">
-          {#each [{ icon: "layers", color: "#c0c1ff", bg: "rgba(192,193,255,0.1)", title: "Clean Architecture + Vertical Slices", desc: "I apply Clean Architecture for strong domain isolation, and Vertical Slice Architecture for feature cohesion — each slice owns its request, handler, and response end-to-end." }, { icon: "route", color: "#4edea3", bg: "rgba(78,222,163,0.1)", title: "CQRS with MediatR", desc: "Commands and queries are strictly separated via MediatR. Every feature is a self-contained handler — no bloated services, no leaking concerns." }, { icon: "rule", color: "#c0c1ff", bg: "rgba(192,193,255,0.08)", title: "FluentValidation", desc: "Validation lives in dedicated validator classes, not scattered across controllers or services. Rules are expressive, testable, and close to the feature they protect." }, { icon: "verified", color: "#4edea3", bg: "rgba(78,222,163,0.1)", title: "Reliable & Tested", desc: "Unit tests are not optional. I write them, fix them, and refactor until the test suite is a source of confidence, not anxiety." }, { icon: "devices", color: "#a7b6cc", bg: "rgba(57,72,90,0.3)", title: "Frontend When It Counts", desc: "SvelteKit for UIs that need to be fast and maintainable. The backend drives the logic; the frontend surfaces it cleanly." }] as item}
+          {#each [{ icon: "layers", color: "#c0c1ff", bg: "rgba(192,193,255,0.1)", title: "Clean Architecture + Vertical Slices", desc: "I apply Clean Architecture for strong domain isolation, and Vertical Slice Architecture for feature cohesion — each slice owns its request, handler, and response end-to-end." }, { icon: "dns", color: "#4edea3", bg: "rgba(78,222,163,0.1)", title: "Microservices & Event-Driven", desc: "Event-driven architectures with RabbitMQ and MassTransit. Services communicate asynchronously — scalable, decoupled, and resilient." }, { icon: "route", color: "#c0c1ff", bg: "rgba(192,193,255,0.1)", title: "CQRS with MediatR", desc: "Commands and queries are strictly separated via MediatR. Every feature is a self-contained handler — no bloated services, no leaking concerns." }, { icon: "rule", color: "#c0c1ff", bg: "rgba(192,193,255,0.08)", title: "FluentValidation", desc: "Validation lives in dedicated validator classes, not scattered across controllers or services. Rules are expressive, testable, and close to the feature they protect." }, { icon: "verified", color: "#4edea3", bg: "rgba(78,222,163,0.1)", title: "Reliable & Tested", desc: "Unit tests are not optional. I write them, fix them, and refactor until the test suite is a source of confidence, not anxiety." }, { icon: "devices", color: "#a7b6cc", bg: "rgba(57,72,90,0.3)", title: "Frontend When It Counts", desc: "SvelteKit for UIs that need to be fast and maintainable. The backend drives the logic; the frontend surfaces it cleanly." }] as item}
             <div class="flex gap-6">
               <div
                 class="w-12 h-12 shrink-0 flex items-center justify-center"
