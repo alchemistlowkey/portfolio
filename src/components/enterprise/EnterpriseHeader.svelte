@@ -15,9 +15,9 @@
   <div class="ent-header-inner">
     <a href="/enterprise" class="ent-logo">
       <img
-        src={dark ? "/logo_dark.png" : "/logo.png"}
+        src={dark ? "/logo.png" : "/logo.png"}
         alt="Lucky Samuel"
-        style="height:32px; width:auto;"
+        style="height:56px; width:auto;"
       />
       <div class="ent-logo-text">
         <span class="ent-logo-name">Lucky Samuel</span>

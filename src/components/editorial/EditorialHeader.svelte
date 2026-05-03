@@ -15,9 +15,9 @@
   <div class="ed-header-inner">
     <a href="/editorial" class="ed-logo">
       <img
-        src={dark ? "/logo_dark.png" : "/logo.png"}
+        src={dark ? "/logo.png" : "/logo.png"}
         alt="Lucky Samuel"
-        style="height:36px; width:auto;"
+        style="height:56px; width:auto;"
       />
       <span class="ed-logo-text">Lucky Samuel</span>
       <span class="ed-logo-meta">— Backend Engineer</span>

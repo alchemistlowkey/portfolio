@@ -1,19 +1,19 @@
 <script>
-  import { goto } from '$app/navigation';
-  import { page } from '$app/stores';
-  import { activeTheme } from '$lib/stores/theme.js';
+  import { goto } from "$app/navigation";
+  import { page } from "$app/stores";
+  import { activeTheme } from "$lib/stores/theme.js";
 
   const themes = [
-    { id: 'default', label: 'Default', route: '/' },
-    { id: 'editorial', label: 'Editorial', route: '/editorial' },
-    { id: 'enterprise', label: 'Enterprise', route: '/enterprise' },
+    { id: "default", label: "Default", route: "/" },
+    { id: "editorial", label: "Editorial", route: "/editorial" },
+    { id: "enterprise", label: "Enterprise", route: "/enterprise" },
   ];
 
-  $: current = $page.url.pathname.startsWith('/editorial')
-    ? 'editorial'
-    : $page.url.pathname.startsWith('/enterprise')
-      ? 'enterprise'
-      : 'default';
+  $: current = $page.url.pathname.startsWith("/editorial")
+    ? "editorial"
+    : $page.url.pathname.startsWith("/enterprise")
+      ? "enterprise"
+      : "default";
 
   function switchTheme(t) {
     activeTheme.set(t.id);
@@ -37,7 +37,7 @@
 <style>
   .switcher {
     position: fixed;
-    bottom: 1.5rem;
+    bottom: 3rem;
     right: 1.5rem;
     z-index: 1000;
     display: flex;
@@ -56,13 +56,15 @@
     padding: 5px 13px;
     border-radius: 999px;
     font-size: 11px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: "JetBrains Mono", monospace;
     letter-spacing: 0.04em;
     color: rgba(255, 255, 255, 0.55);
     background: transparent;
     border: none;
     cursor: pointer;
-    transition: color 0.18s, background 0.18s;
+    transition:
+      color 0.18s,
+      background 0.18s;
     white-space: nowrap;
     line-height: 1.4;
   }

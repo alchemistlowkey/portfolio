@@ -2,7 +2,8 @@
   const resumeProjects = [
     {
       title: "HealthBridge",
-      company: "Multi-Tenant Healthcare Platform · .NET 10 / Microservices / Keycloak / MongoDB",
+      company:
+        "Multi-Tenant Healthcare Platform · .NET 10 / Microservices / Keycloak / MongoDB",
       period: "2025 – PRESENT",
       link: null,
       bullets: [
@@ -28,7 +29,8 @@
     },
     {
       title: "Play Microservices",
-      company: "Event-Driven Distributed System · .NET 5 / RabbitMQ / MongoDB / Next.js",
+      company:
+        "Event-Driven Distributed System · .NET 5 / RabbitMQ / MongoDB / Next.js",
       period: "2026",
       link: "https://github.com/alchemistlowkey/play.microservices",
       bullets: [
@@ -69,19 +71,50 @@
   ];
 
   const skillCategories = [
-    ["Backend", "ASP.NET Core, C#, .NET 5–10 (Minimal APIs), Clean Architecture, Vertical Slices"],
-    ["Microservices & Messaging", "RabbitMQ, MassTransit, Event-Driven Architecture, Distributed Systems"],
-    ["Patterns", "CQRS / MediatR, Repository Pattern, Dependency Injection, SOLID Principles, OOP"],
+    [
+      "Backend",
+      "ASP.NET Core, C#, .NET 5–10 (Minimal APIs), Clean Architecture, Vertical Slices",
+    ],
+    [
+      "Microservices & Messaging",
+      "RabbitMQ, MassTransit, Event-Driven Architecture, Distributed Systems",
+    ],
+    [
+      "Patterns",
+      "CQRS / MediatR, Repository Pattern, Dependency Injection, SOLID Principles, OOP",
+    ],
     ["Databases", "MSSQL, PostgreSQL, MongoDB — Entity Framework Core, Dapper"],
-    ["Auth & Security", "JWT, Keycloak, Role-Based Authorization (RBAC), OAuth 2.0 / OIDC"],
+    [
+      "Auth & Security",
+      "JWT, Keycloak, Role-Based Authorization (RBAC), OAuth 2.0 / OIDC",
+    ],
     ["Frontend", "SvelteKit, React, Next.js, Tailwind CSS"],
     ["Testing", "xUnit, Moq, FluentAssertions (90%+ coverage achieved)"],
-    ["Tools & DevOps", "Docker, Docker Compose, Git, Swagger / OpenAPI / Scalar, Serilog, AutoMapper, FluentValidation, YARP, Agile / Scrum"],
+    [
+      "Tools & DevOps",
+      "Docker, Docker Compose, Git, Swagger / OpenAPI / Scalar, Serilog, AutoMapper, FluentValidation, YARP, Agile / Scrum",
+    ],
     ["Cloud & Hosting", "Vercel, Railway, AWS (basic), Azure (basic)"],
-    ["Payments & Media", "Paystack, Flutterwave (webhook handling), Cloudinary (per-tenant scoped uploads)"],
+    [
+      "Payments & Media",
+      "Paystack, Flutterwave (webhook handling), Cloudinary (per-tenant scoped uploads)",
+    ],
   ];
 
-  const tools = ["MediatR", "FluentValidation", "AutoMapper", "xUnit + Moq", "Swagger / Scalar", "JWT / Keycloak", "Serilog + Seq", "Docker Compose", "RabbitMQ", "MassTransit", "YARP", "Cloudinary"];
+  const tools = [
+    "MediatR",
+    "FluentValidation",
+    "AutoMapper",
+    "xUnit + Moq",
+    "Swagger / Scalar",
+    "JWT / Keycloak",
+    "Serilog + Seq",
+    "Docker Compose",
+    "RabbitMQ",
+    "MassTransit",
+    "YARP",
+    "Cloudinary",
+  ];
 
   const education = [
     {
@@ -89,22 +122,64 @@
       institution: "University of Benin · Nigeria",
     },
     {
-      degree: "Certificate of Completion — Back-End Specialisation (12-Month Programme)",
-      institution: "ALX Software Engineering (Powered by Holberton Inc) · June 2024",
+      degree:
+        "Certificate of Completion — Back-End Specialisation (12-Month Programme)",
+      institution:
+        "ALX Software Engineering (Powered by Holberton Inc) · June 2024",
     },
   ];
 
   const certifications = [
-    { name: "Career Essentials in Software Development", issuer: "Microsoft & LinkedIn Learning", date: "Jun 2024" },
-    { name: "Build Your Generative AI Productivity Skills", issuer: "Microsoft & LinkedIn Learning", date: "Jul 2024" },
-    { name: "Introduction to Prompt Engineering for Generative AI", issuer: "LinkedIn Learning", date: "Jul 2024" },
-    { name: "Programming Foundations: Beyond the Fundamentals", issuer: "LinkedIn Learning", date: "Jun 2024" },
-    { name: "Introduction to Career Skills in Software Development", issuer: "LinkedIn Learning", date: "Jun 2024" },
-    { name: "English for IT 1 & 2", issuer: "Cisco Networking Academy / OpenEDG", date: "Jun 2024" },
-    { name: "Professional Soft Skills Learning Pathway", issuer: "LinkedIn Learning", date: "Aug 2024" },
-    { name: "Communication Foundations", issuer: "LinkedIn Learning", date: "Aug 2024" },
-    { name: "Critical Thinking for Better Judgment & Decision-Making", issuer: "LinkedIn Learning", date: "Jul 2024" },
-    { name: "Unconscious Bias (CPE Credit — NASBA)", issuer: "LinkedIn Learning", date: "Jul 2024" },
+    {
+      name: "Career Essentials in Software Development",
+      issuer: "Microsoft & LinkedIn Learning",
+      date: "Jun 2024",
+    },
+    {
+      name: "Build Your Generative AI Productivity Skills",
+      issuer: "Microsoft & LinkedIn Learning",
+      date: "Jul 2024",
+    },
+    {
+      name: "Introduction to Prompt Engineering for Generative AI",
+      issuer: "LinkedIn Learning",
+      date: "Jul 2024",
+    },
+    {
+      name: "Programming Foundations: Beyond the Fundamentals",
+      issuer: "LinkedIn Learning",
+      date: "Jun 2024",
+    },
+    {
+      name: "Introduction to Career Skills in Software Development",
+      issuer: "LinkedIn Learning",
+      date: "Jun 2024",
+    },
+    {
+      name: "English for IT 1 & 2",
+      issuer: "Cisco Networking Academy / OpenEDG",
+      date: "Jun 2024",
+    },
+    {
+      name: "Professional Soft Skills Learning Pathway",
+      issuer: "LinkedIn Learning",
+      date: "Aug 2024",
+    },
+    {
+      name: "Communication Foundations",
+      issuer: "LinkedIn Learning",
+      date: "Aug 2024",
+    },
+    {
+      name: "Critical Thinking for Better Judgment & Decision-Making",
+      issuer: "LinkedIn Learning",
+      date: "Jul 2024",
+    },
+    {
+      name: "Unconscious Bias (CPE Credit — NASBA)",
+      issuer: "LinkedIn Learning",
+      date: "Jul 2024",
+    },
   ];
 </script>
 
@@ -218,15 +293,31 @@
           </h3>
         </div>
         <div class="md:col-span-3">
-          <p class="leading-relaxed text-base font-light" style="color: #c7c4d8;">
-            Results-driven Backend Engineer with <span style="color: #dae2fd; font-weight: 500;">3+ years of experience</span> designing, developing, and maintaining production-ready
-            web applications and distributed systems using <span style="color: #dae2fd; font-weight: 500;">C# and ASP.NET Core (.NET 5–10)</span>. Proven track record delivering
-            medium-to-large-scale, high-volume, database-driven web applications end-to-end — from architecture through
-            deployment. Deep expertise in <span style="color: #dae2fd; font-weight: 500;">Clean Architecture, Microservices, CQRS with MediatR</span>, and RESTful API design. Solid
-            command of Microsoft SQL Server, PostgreSQL, and MongoDB with Entity Framework Core and Dapper. Experienced
-            integrating external web portals and third-party APIs. Frontend-capable in SvelteKit, React, and Next.js. Thrives in
-            Agile/Scrum team environments; comfortable working independently to meet deadlines. Passionate about clean, testable,
-            and maintainable code.
+          <p
+            class="leading-relaxed text-base font-light"
+            style="color: #c7c4d8;"
+          >
+            Results-driven Backend Engineer with <span
+              style="color: #dae2fd; font-weight: 500;"
+              >3+ years of experience</span
+            >
+            designing, developing, and maintaining production-ready web applications
+            and distributed systems using
+            <span style="color: #dae2fd; font-weight: 500;"
+              >C# and ASP.NET Core (.NET 5–10)</span
+            >. Proven track record delivering medium-to-large-scale,
+            high-volume, database-driven web applications end-to-end — from
+            architecture through deployment. Deep expertise in
+            <span style="color: #dae2fd; font-weight: 500;"
+              >Clean/Onion Architecture, Vertical Slice Architecture,
+              Microservices, CQRS with MediatR</span
+            >, and RESTful API design. Solid command of Microsoft SQL Server,
+            PostgreSQL, and MongoDB with Entity Framework Core and Dapper.
+            Experienced integrating external web portals and third-party APIs.
+            Frontend-capable in SvelteKit, React, and Next.js. Thrives in
+            Agile/Scrum team environments; comfortable working independently to
+            meet deadlines. Passionate about clean, testable, and maintainable
+            code.
           </p>
         </div>
       </section>
@@ -350,8 +441,12 @@
         <div class="md:col-span-3 space-y-6">
           {#each education as edu}
             <div>
-              <p class="font-semibold text-base" style="color: #dae2fd;">{edu.degree}</p>
-              <p class="text-sm mt-1" style="color: #a7b6cc;">{edu.institution}</p>
+              <p class="font-semibold text-base" style="color: #dae2fd;">
+                {edu.degree}
+              </p>
+              <p class="text-sm mt-1" style="color: #a7b6cc;">
+                {edu.institution}
+              </p>
             </div>
           {/each}
         </div>
@@ -379,8 +474,12 @@
                   style="color: #c0c1ff;">workspace_premium</span
                 >
                 <div>
-                  <p class="text-xs font-medium" style="color: #dae2fd;">{cert.name}</p>
-                  <p class="text-xs mt-0.5" style="color: #a7b6cc;">{cert.issuer} · {cert.date}</p>
+                  <p class="text-xs font-medium" style="color: #dae2fd;">
+                    {cert.name}
+                  </p>
+                  <p class="text-xs mt-0.5" style="color: #a7b6cc;">
+                    {cert.issuer} · {cert.date}
+                  </p>
                 </div>
               </div>
             {/each}
