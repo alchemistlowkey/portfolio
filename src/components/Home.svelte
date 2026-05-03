@@ -1,6 +1,9 @@
 <script>
   import Marquee from "./Marquee.svelte";
+  import CaseStudyModal from "./shared/CaseStudyModal.svelte";
   import { onMount } from "svelte";
+
+  let caseStudyOpen = $state(false);
 
   const roles = [
     "C# & .NET",
@@ -204,6 +207,92 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <!-- HealthBridge — Leading Featured Project -->
+        <div
+          class="md:col-span-12 p-1"
+          style="background: linear-gradient(135deg, rgba(78,222,163,0.18) 0%, rgba(192,193,255,0.12) 100%); border-radius: 0.5rem;"
+        >
+          <div
+            class="p-8 md:p-10"
+            style="background: #1a2236; border-radius: 0.375rem; border: 1px solid rgba(78,222,163,0.15); position: relative; overflow: hidden;"
+          >
+            <div
+              class="absolute top-0 right-0 w-72 h-72 pointer-events-none"
+              style="background: radial-gradient(circle at 100% 0%, rgba(78,222,163,0.08), transparent 70%);"
+            ></div>
+            <div class="flex flex-col lg:flex-row gap-10 relative">
+              <div class="flex-1">
+                <div class="flex flex-wrap items-center gap-2 mb-5">
+                  <span
+                    class="px-3 py-1 text-xs uppercase tracking-wider font-bold"
+                    style="border-radius: 0.25rem; background: rgba(78,222,163,0.15); color: #4edea3; font-family: 'JetBrains Mono', monospace; border: 1px solid rgba(78,222,163,0.3);"
+                    >Featured Case Study</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xs uppercase tracking-wider"
+                    style="border-radius: 0.25rem; background: rgba(192,193,255,0.1); color: #c0c1ff; font-family: 'JetBrains Mono', monospace;"
+                    >Healthcare SaaS</span
+                  >
+                  <span
+                    class="px-3 py-1 text-xs uppercase tracking-wider"
+                    style="border-radius: 0.25rem; background: rgba(192,193,255,0.08); color: #a7b6cc; font-family: 'JetBrains Mono', monospace;"
+                    >Microservices</span
+                  >
+                </div>
+                <h4
+                  class="text-3xl md:text-4xl font-bold mb-3"
+                  style="font-family: 'Space Grotesk', sans-serif; color: #dae2fd;"
+                >
+                  HealthBridge
+                </h4>
+                <p class="text-base leading-relaxed mb-6 max-w-xl" style="color: #c7c4d8;">
+                  Cloud-native, API-first multi-tenant healthcare platform connecting
+                  <strong style="color: #dae2fd;">hospitals</strong>,
+                  <strong style="color: #dae2fd;">patients</strong>, and
+                  <strong style="color: #dae2fd;">HMO providers</strong>
+                  across Nigeria. Event-driven microservices built on .NET 10, RabbitMQ, Keycloak, and MongoDB.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-8">
+                  {#each ['.NET 10', 'MongoDB', 'RabbitMQ', 'Keycloak', 'MassTransit', 'SvelteKit', 'Docker'] as tag}
+                    <span
+                      class="px-2 py-1 uppercase tracking-tighter text-xs"
+                      style="font-family: 'JetBrains Mono', monospace; background: #39485a; color: #a7b6cc; border-radius: 0.125rem;"
+                      >{tag}</span
+                    >
+                  {/each}
+                </div>
+                <button
+                  onclick={() => (caseStudyOpen = true)}
+                  class="inline-flex items-center gap-2 px-6 py-3 font-semibold text-sm transition-all"
+                  style="background: #4edea3; color: #003824; border-radius: 0.25rem; font-family: 'Space Grotesk', sans-serif;"
+                  onmouseenter={(e) => (e.currentTarget.style.background = '#006e4b')}
+                  onmouseleave={(e) => (e.currentTarget.style.background = '#4edea3')}
+                >
+                  Read Case Study
+                  <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                </button>
+              </div>
+              <div class="lg:w-80 shrink-0 grid grid-cols-2 gap-4 content-start">
+                {#each [{ val: '7', label: 'Microservices', color: '#4edea3' }, { val: '6', label: 'Domain Events', color: '#c0c1ff' }, { val: '3', label: 'Tenant Types', color: '#4edea3' }, { val: 'VSA', label: 'Architecture', color: '#c0c1ff' }] as stat}
+                  <div
+                    class="p-4 text-center"
+                    style="background: #131b2e; border-radius: 0.375rem; border: 1px solid rgba(70,69,85,0.15);"
+                  >
+                    <div
+                      class="text-2xl font-bold"
+                      style="color: {stat.color}; font-family: 'JetBrains Mono', monospace;"
+                    >{stat.val}</div>
+                    <div
+                      class="text-xs uppercase tracking-widest mt-1"
+                      style="font-family: 'JetBrains Mono', monospace; color: #a7b6cc;"
+                    >{stat.label}</div>
+                  </div>
+                {/each}
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Featured Project 1 -->
         <div
           class="md:col-span-8 overflow-hidden group"
@@ -623,6 +712,8 @@
       </div>
     </div>
   </section>
+
+  <CaseStudyModal bind:open={caseStudyOpen} theme="default" />
 
   <!-- CTA Section -->
   <section class="max-w-7xl mx-auto px-8 py-24 text-center">

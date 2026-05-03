@@ -23,6 +23,89 @@
   </header>
 
   <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+    <!-- HealthBridge: Flagship Full-Width -->
+    <!-- svelte-ignore a11y_no_static_element_interactions -->
+    <div
+      class="md:col-span-12 overflow-hidden group"
+      style="background: #171f33; border-radius: 0.5rem; border: 1px solid rgba(78,222,163,0.15); transition: border-color 0.5s;"
+      onmouseenter={(e) =>
+        (e.currentTarget.style.borderColor = "rgba(78,222,163,0.4)")}
+      onmouseleave={(e) =>
+        (e.currentTarget.style.borderColor = "rgba(78,222,163,0.15)")}
+    >
+      <div class="p-8 md:p-10">
+        <div class="flex flex-col md:flex-row justify-between gap-8">
+          <!-- Left: info -->
+          <div class="flex-1">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="p-3" style="background: rgba(78,222,163,0.1); border-radius: 0.25rem;">
+                <span class="material-symbols-outlined text-2xl" style="color: #4edea3;">local_hospital</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1">
+                  <span
+                    class="px-2 py-0.5 text-xs uppercase tracking-wider"
+                    style="border-radius: 0.125rem; background: rgba(78,222,163,0.15); color: #4edea3; font-family: 'JetBrains Mono', monospace; border: 1px solid rgba(78,222,163,0.3);"
+                    >Flagship Project</span
+                  >
+                  <span
+                    class="px-2 py-0.5 text-xs uppercase tracking-wider"
+                    style="border-radius: 0.125rem; background: rgba(192,193,255,0.1); color: #c0c1ff; font-family: 'JetBrains Mono', monospace; border: 1px solid rgba(192,193,255,0.2);"
+                    >In Progress</span
+                  >
+                </div>
+                <h3
+                  class="text-3xl font-bold"
+                  style="font-family: 'Space Grotesk', sans-serif; color: #dae2fd;"
+                >
+                  HealthBridge
+                </h3>
+              </div>
+            </div>
+            <p class="text-sm leading-relaxed mb-6 max-w-3xl" style="color: #c7c4d8;">
+              Cloud-native, <span class="font-extrabold text-white">multi-tenant healthcare management platform</span> for hospitals, patients, and HMO organisations across Nigeria/West Africa.
+              Built on a <span class="font-extrabold text-white">7-service Microservices topology</span> with Vertical Slice Architecture and CQRS + MediatR — targeting 50+ hospital tenants and sub-200ms P95 API response times.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              {#each [".NET 10", "ASP.NET Core", "MongoDB", "RabbitMQ", "MassTransit", "Keycloak", "Docker", "Serilog / Seq", "YARP", "Cloudinary"] as tag}
+                <span
+                  class="px-2 py-1 uppercase tracking-tighter text-xs"
+                  style="font-family: 'JetBrains Mono', monospace; background: #39485a; color: #a7b6cc; border-radius: 0.125rem;"
+                  >{tag}</span
+                >
+              {/each}
+            </div>
+          </div>
+          <!-- Right: stats -->
+          <div class="grid grid-cols-2 md:grid-cols-1 gap-3 md:w-48 shrink-0">
+            {#each [["7", "Microservices"], ["6", "Domain Events"], ["3", "Tenant Types"], ["VSA", "Architecture"]] as [val, lbl]}
+              <div
+                class="p-4 text-center"
+                style="background: #131b2e; border-radius: 0.25rem; border: 1px solid rgba(78,222,163,0.1);"
+              >
+                <p class="text-2xl font-bold mb-0.5" style="font-family: 'JetBrains Mono', monospace; color: #4edea3;">{val}</p>
+                <p class="text-xs uppercase tracking-widest" style="color: #a7b6cc;">{lbl}</p>
+              </div>
+            {/each}
+          </div>
+        </div>
+        <div class="flex gap-4 mt-2">
+          <a
+            href="https://github.com/alchemistlowkey/HealthBridge"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center text-sm group/link"
+            style="color: #c0c1ff; font-family: 'JetBrains Mono', monospace;"
+          >
+            SOURCE <span
+              class="material-symbols-outlined ml-2 text-sm transition-transform group-hover/link:translate-x-1"
+              >code</span
+            >
+          </a>
+        </div>
+      </div>
+    </div>
+
     <!-- E-Commerce: Featured Large -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div
@@ -484,23 +567,26 @@
         <p style="color: #c7c4d8;">
           <span style="color: #c0c1ff;">$</span> git log --oneline --author="Lucky"
         </p>
+        <p style="color: #4edea3;">
+          feat: healthbridge — multi-tenant onboarding + keycloak
+        </p>
         <p style="color: rgba(167,182,204,0.6);">
-          feat: play microservices — event-driven .NET services
+          fix: enforce ITenantContext across all repo queries
+        </p>
+        <p style="color: rgba(167,182,204,0.6);">
+          feat: notification worker — RabbitMQ + MassTransit consumers
         </p>
         <p style="color: rgba(167,182,204,0.6);">
           feat: product catalogue & cart — ecommerce API
         </p>
         <p style="color: rgba(167,182,204,0.6);">
+          feat: play microservices — event-driven .NET services
+        </p>
+        <p style="color: rgba(167,182,204,0.6);">
           feat: expense categories + chart endpoint
         </p>
         <p style="color: rgba(167,182,204,0.6);">
-          fix: unit test typo in BookStore.API
-        </p>
-        <p style="color: rgba(167,182,204,0.6);">
           feat: PDF export — Invoicely
-        </p>
-        <p style="color: rgba(167,182,204,0.6);">
-          feat: responsive sidebar with Svelte store
         </p>
         <p style="color: #4edea3;">∞ commits and counting...</p>
       </div>

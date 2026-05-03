@@ -1,3 +1,113 @@
+<script>
+  const resumeProjects = [
+    {
+      title: "HealthBridge",
+      company: "Multi-Tenant Healthcare Platform · .NET 10 / Microservices / Keycloak / MongoDB",
+      period: "2025 – PRESENT",
+      link: null,
+      bullets: [
+        "Architecting and building a cloud-native, multi-tenant healthcare management platform for hospitals, patients, and HMO organisations in Nigeria/West Africa, targeting 50+ hospital tenants and sub-200ms P95 API response times.",
+        "Designed a 7-service Microservices topology (Hospital, Patient, HMO, Appointment, Billing, Notification, Gateway) each internally structured with Vertical Slice Architecture and CQRS + MediatR — every feature is a self-contained slice with co-located handler, validator, request/response DTOs, and endpoint definition.",
+        "Implemented a robust self-service tenant onboarding system: auto-generates unique tenant slugs via atomic MongoDB sequence increments (FindOneAndUpdate + $inc), records ownership in a tenant_registry, and stamps tenant_id onto the user's Keycloak account via the Admin REST API — with full rollback if the Keycloak call fails.",
+        "Resolved a critical multi-tenancy correctness bug: enforced a single authoritative JWT-resolved tenant source (ITenantContext) across all repository queries, eliminating silent cross-collection data leakage between write and read paths.",
+        "Wired Keycloak JWT authentication with correct role claim mapping from nested realm_access.roles; configured Swagger with both Bearer and OAuth2 security schemes and EnablePersistAuthorization() for reliable API testing.",
+        "Built event-driven Notification Worker consuming RabbitMQ domain events (appointment booked, invoice generated, patient enrolled, etc.) via MassTransit consumers — purely event-driven background service with dead letter queue configured.",
+        "Integrated Cloudinary for per-tenant scoped media uploads and Serilog + Seq for structured observability across all services.",
+      ],
+    },
+    {
+      title: "E-Commerce Platform",
+      company: "Fullstack · ASP.NET Core 10 (C#) + SvelteKit",
+      period: "2025 – PRESENT",
+      link: "https://csharp-ecommerce-frontend.vercel.app",
+      bullets: [
+        "Built a production-ready, high-volume e-commerce web application using ASP.NET Core 10 with Clean Architecture (Repository & Service patterns) and PostgreSQL with EF Core migrations.",
+        "Implemented JWT authentication; integrated Paystack and Flutterwave payment gateways with robust error handling and webhook processing; added Serilog structured logging and Scalar OpenAPI documentation.",
+        "Developed SvelteKit storefront for product catalogue, cart management, and order processing with real-time cart synchronisation.",
+      ],
+    },
+    {
+      title: "Play Microservices",
+      company: "Event-Driven Distributed System · .NET 5 / RabbitMQ / MongoDB / Next.js",
+      period: "2026",
+      link: "https://github.com/alchemistlowkey/play.microservices",
+      bullets: [
+        "Architected an event-driven microservices system using .NET 5 with RabbitMQ and MassTransit for asynchronous inter-service communication.",
+        "Built Catalog Service (RESTful CRUD) and Inventory Service (event consumer); created shared Play.Common library with reusable MongoDB repositories and MassTransit extensions; containerised with Docker Compose.",
+      ],
+    },
+    {
+      title: "BookStore API",
+      company: "Vertical Slice Architecture with CQRS · ASP.NET Core / .NET 10",
+      period: "2024",
+      link: "https://github.com/alchemistlowkey/BookStore.API",
+      bullets: [
+        "Developed a scalable RESTful Web API using Vertical Slice Architecture with MediatR for CQRS — each feature is a self-contained slice with co-located handler, validator, and DTOs.",
+        "Implemented JWT authentication via Keycloak with role-based authorization; achieved 90%+ test coverage with comprehensive xUnit + Moq suite.",
+      ],
+    },
+    {
+      title: "Expense Tracker API",
+      company: "Fullstack · ASP.NET Core 10 (C#) + SvelteKit",
+      period: "2024",
+      link: "https://expense-tracker-mu-eight-84.vercel.app",
+      bullets: [
+        "Built a Clean Architecture Web API for expense tracking with layered Repository/Service design, JWT auth with token refresh, and EF Core PostgreSQL persistence.",
+        "Created Swagger/OpenAPI documentation; built SvelteKit frontend with real-time expense categorisation, filtering, and spending visualisation charts.",
+      ],
+    },
+    {
+      title: "Invoicely",
+      company: "Invoicing SaaS · SvelteKit + Node.js + Tailwind CSS v4",
+      period: "2024 – PRESENT",
+      link: null,
+      bullets: [
+        "Built a full-featured invoicing SaaS with client management, real-time PDF generation, and mobile-first responsive dashboard.",
+        "Implemented shared Svelte writable store for cross-component state synchronisation and card-based UI alternatives to data tables.",
+      ],
+    },
+  ];
+
+  const skillCategories = [
+    ["Backend", "ASP.NET Core, C#, .NET 5–10 (Minimal APIs), Clean Architecture, Vertical Slices"],
+    ["Microservices & Messaging", "RabbitMQ, MassTransit, Event-Driven Architecture, Distributed Systems"],
+    ["Patterns", "CQRS / MediatR, Repository Pattern, Dependency Injection, SOLID Principles, OOP"],
+    ["Databases", "MSSQL, PostgreSQL, MongoDB — Entity Framework Core, Dapper"],
+    ["Auth & Security", "JWT, Keycloak, Role-Based Authorization (RBAC), OAuth 2.0 / OIDC"],
+    ["Frontend", "SvelteKit, React, Next.js, Tailwind CSS"],
+    ["Testing", "xUnit, Moq, FluentAssertions (90%+ coverage achieved)"],
+    ["Tools & DevOps", "Docker, Docker Compose, Git, Swagger / OpenAPI / Scalar, Serilog, AutoMapper, FluentValidation, YARP, Agile / Scrum"],
+    ["Cloud & Hosting", "Vercel, Railway, AWS (basic), Azure (basic)"],
+    ["Payments & Media", "Paystack, Flutterwave (webhook handling), Cloudinary (per-tenant scoped uploads)"],
+  ];
+
+  const tools = ["MediatR", "FluentValidation", "AutoMapper", "xUnit + Moq", "Swagger / Scalar", "JWT / Keycloak", "Serilog + Seq", "Docker Compose", "RabbitMQ", "MassTransit", "YARP", "Cloudinary"];
+
+  const education = [
+    {
+      degree: "Bachelor of Science — Industrial Chemistry",
+      institution: "University of Benin · Nigeria",
+    },
+    {
+      degree: "Certificate of Completion — Back-End Specialisation (12-Month Programme)",
+      institution: "ALX Software Engineering (Powered by Holberton Inc) · June 2024",
+    },
+  ];
+
+  const certifications = [
+    { name: "Career Essentials in Software Development", issuer: "Microsoft & LinkedIn Learning", date: "Jun 2024" },
+    { name: "Build Your Generative AI Productivity Skills", issuer: "Microsoft & LinkedIn Learning", date: "Jul 2024" },
+    { name: "Introduction to Prompt Engineering for Generative AI", issuer: "LinkedIn Learning", date: "Jul 2024" },
+    { name: "Programming Foundations: Beyond the Fundamentals", issuer: "LinkedIn Learning", date: "Jun 2024" },
+    { name: "Introduction to Career Skills in Software Development", issuer: "LinkedIn Learning", date: "Jun 2024" },
+    { name: "English for IT 1 & 2", issuer: "Cisco Networking Academy / OpenEDG", date: "Jun 2024" },
+    { name: "Professional Soft Skills Learning Pathway", issuer: "LinkedIn Learning", date: "Aug 2024" },
+    { name: "Communication Foundations", issuer: "LinkedIn Learning", date: "Aug 2024" },
+    { name: "Critical Thinking for Better Judgment & Decision-Making", issuer: "LinkedIn Learning", date: "Jul 2024" },
+    { name: "Unconscious Bias (CPE Credit — NASBA)", issuer: "LinkedIn Learning", date: "Jul 2024" },
+  ];
+</script>
+
 <main class="pt-32 pb-20 px-6 sm:px-8 max-w-5xl mx-auto">
   <!-- Hero -->
   <div
@@ -70,13 +180,13 @@
             class="text-lg tracking-tight mb-6"
             style="font-family: 'JetBrains Mono', monospace; color: #c0c1ff;"
           >
-            Backend Engineer · .NET / C#
+            Backend Engineer | C# / .NET Developer | Full-Stack Capable
           </p>
           <div
             class="grid grid-cols-1 sm:grid-cols-2 gap-y-2 gap-x-8 text-sm"
             style="color: #c7c4d8;"
           >
-            {#each [["mail", "lucky.samuel.egiagbo@gmail.com"], ["location_on", "Lagos, Nigeria 🇳🇬"], ["link", "linkedin.com/in/lucky-samuel"], ["code", "github.com/alchemistlowkey"]] as [icon, text]}
+            {#each [["mail", "lucky.samuel.egiagbo@gmail.com"], ["location_on", "Lagos, Nigeria"], ["link", "linkedin.com/in/lucky-samuel"], ["code", "github.com/alchemistlowkey"], ["language", "lucky-samuel.vercel.app"]] as [icon, text]}
               <div class="flex items-center gap-2">
                 <span class="material-symbols-outlined text-xs">{icon}</span>
                 {text}
@@ -108,15 +218,15 @@
           </h3>
         </div>
         <div class="md:col-span-3">
-          <p class="leading-relaxed text-lg font-light" style="color: #c7c4d8;">
-            Backend engineer with 3+ years of experience building
-            production-ready APIs and systems in
-            <span style="color: #dae2fd; font-weight: 500;"
-              >.NET / C# (ASP.NET Core)</span
-            >. Specialises in Clean Architecture, Vertical Slice Architecture,
-            Microservices with event-driven patterns (RabbitMQ/MassTransit),
-            CQRS with MediatR, FluentValidation, and RESTful API design.
-            Frontend-capable in SvelteKit when the project calls for it.
+          <p class="leading-relaxed text-base font-light" style="color: #c7c4d8;">
+            Results-driven Backend Engineer with <span style="color: #dae2fd; font-weight: 500;">3+ years of experience</span> designing, developing, and maintaining production-ready
+            web applications and distributed systems using <span style="color: #dae2fd; font-weight: 500;">C# and ASP.NET Core (.NET 5–10)</span>. Proven track record delivering
+            medium-to-large-scale, high-volume, database-driven web applications end-to-end — from architecture through
+            deployment. Deep expertise in <span style="color: #dae2fd; font-weight: 500;">Clean Architecture, Microservices, CQRS with MediatR</span>, and RESTful API design. Solid
+            command of Microsoft SQL Server, PostgreSQL, and MongoDB with Entity Framework Core and Dapper. Experienced
+            integrating external web portals and third-party APIs. Frontend-capable in SvelteKit, React, and Next.js. Thrives in
+            Agile/Scrum team environments; comfortable working independently to meet deadlines. Passionate about clean, testable,
+            and maintainable code.
           </p>
         </div>
       </section>
@@ -132,7 +242,7 @@
           </h3>
         </div>
         <div class="md:col-span-3 space-y-12">
-          {#each [{ title: "Play Microservices", company: "Microservices · .NET 5 / RabbitMQ / MongoDB / Next.js", period: "2026", link: "https://github.com/alchemistlowkey/play.microservices", bullets: ["Event-driven microservices architecture with .NET 5, demonstrating async communication via MassTransit and RabbitMQ.", "Services: Catalog Service (REST API for catalog management), Inventory Service (consumes events, manages inventory).", "Next.js 14 frontend, Docker Compose for MongoDB and RabbitMQ infrastructure.", "Shared Play.Common library with MongoDB repositories and MassTransit extensions."] }, { title: "E-Commerce Platform", company: "Fullstack · ASP.NET Core (C#) + SvelteKit", period: "2025 — PRESENT", link: "https://csharp-ecommerce-frontend.vercel.app", bullets: ["Production-ready e-commerce backend built with ASP.NET Core 10 using Clean Architecture with Repository & Service patterns.", "Features JWT authentication, PostgreSQL with EF Core migrations, Paystack/Flutterwave payment integration, Serilog logging, and Scalar API documentation.", "SvelteKit storefront covering product catalogue, cart management, and order processing."] }, { title: "Expense Tracker", company: "Fullstack · ASP.NET Core (C#) + SvelteKit", period: "2024", link: "https://expense-tracker-mu-eight-84.vercel.app", bullets: ["Clean Architecture ASP.NET Core 10 Web API for personal expense tracking.", "Features JWT auth, EF Core with PostgreSQL, Swagger docs, and layered Repository/Service design.", "SvelteKit frontend for real-time categorisation, filtering, and spending visualisation."] }, { title: "BookStore API", company: "REST API · ASP.NET Core / C#", period: "2024", link: "https://github.com/alchemistlowkey/BookStore.API", bullets: ["Modern, scalable API built with .NET 10 and ASP.NET Core using Vertical Slice Architecture with MediatR for CQRS patterns.", "Features JWT authentication with Keycloak, EF Core, FluentValidation, AutoMapper, Swagger/OpenAPI docs, and comprehensive xUnit + Moq testing.", "Every feature is a self-contained slice — handler, validator, and DTO co-located per feature folder."] }] as job}
+          {#each resumeProjects as job}
             <div class="space-y-4">
               <div
                 class="flex flex-col sm:flex-row sm:items-start justify-between gap-2"
@@ -193,7 +303,7 @@
         <div class="md:col-span-3">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div class="space-y-3">
-              {#each [["Backend", "ASP.NET Core, C#, Clean Arch, Vertical Slices"], ["Microservices", "RabbitMQ, MassTransit, Event-Driven, MongoDB"], ["Patterns", "CQRS / MediatR, Repository, FluentValidation"], ["Frontend", "SvelteKit, React, Next.js, Tailwind CSS v4"], ["Database", "PostgreSQL, SQL Server, EF Core, MongoDB"], ["Language", "C#, JavaScript"]] as [label, value]}
+              {#each skillCategories as [label, value]}
                 <div>
                   <p
                     class="text-xs uppercase tracking-widest mb-0.5"
@@ -206,7 +316,7 @@
               {/each}
             </div>
             <div class="space-y-3">
-              {#each ["MediatR", "FluentValidation", "AutoMapper", "xUnit + Moq", "Swagger / OpenAPI", "JWT / Keycloak", "Serilog", "Docker", "RabbitMQ", "MassTransit"] as tool}
+              {#each tools as tool}
                 <div
                   class="flex items-center gap-3 p-3"
                   style="background: #131b2e; border-radius: 0.25rem; border: 1px solid rgba(70,69,85,0.1);"
@@ -223,6 +333,57 @@
                 </div>
               {/each}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <h3
+            class="text-xs font-black uppercase tracking-widest"
+            style="font-family: 'JetBrains Mono', monospace; color: rgba(78,222,163,0.8);"
+          >
+            Education
+          </h3>
+        </div>
+        <div class="md:col-span-3 space-y-6">
+          {#each education as edu}
+            <div>
+              <p class="font-semibold text-base" style="color: #dae2fd;">{edu.degree}</p>
+              <p class="text-sm mt-1" style="color: #a7b6cc;">{edu.institution}</p>
+            </div>
+          {/each}
+        </div>
+      </section>
+
+      <!-- Certifications -->
+      <section class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div class="md:col-span-1">
+          <h3
+            class="text-xs font-black uppercase tracking-widest"
+            style="font-family: 'JetBrains Mono', monospace; color: rgba(78,222,163,0.8);"
+          >
+            Certifications
+          </h3>
+        </div>
+        <div class="md:col-span-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
+            {#each certifications as cert}
+              <div
+                class="flex items-start gap-3 p-3"
+                style="background: #131b2e; border-radius: 0.25rem; border: 1px solid rgba(70,69,85,0.1);"
+              >
+                <span
+                  class="material-symbols-outlined text-sm mt-0.5 shrink-0"
+                  style="color: #c0c1ff;">workspace_premium</span
+                >
+                <div>
+                  <p class="text-xs font-medium" style="color: #dae2fd;">{cert.name}</p>
+                  <p class="text-xs mt-0.5" style="color: #a7b6cc;">{cert.issuer} · {cert.date}</p>
+                </div>
+              </div>
+            {/each}
           </div>
         </div>
       </section>
